@@ -1,0 +1,70 @@
+{
+  "itemList": [
+    {
+      "id": "1",
+      "awid": "4ef6a7b01b5942ecbfb925b249af987f",
+      "sys": {
+        "cts": "2022-10-21T14:09:21.637Z",
+        "mts": "2022-10-21T14:58:16.037Z",
+        "rev": 0
+      },
+      "mainPilotId": "1",
+      "aircraftId": "1",
+      "arrivalPlaceId": "2",
+      "arrivalDateTime": "2022-10-16T22:15:00.000Z",
+      "departurePlaceId": "1",
+      "departureDateTime": "2022-10-16T06:10:00.000Z"
+    },
+    {
+      "id": "2",
+      "awid": "4ef6a7b01b5942ecbfb925b249af987f",
+      "sys": {
+        "cts": "2022-10-22T14:09:21.637Z",
+        "mts": "2022-10-22T14:58:16.037Z",
+        "rev": 0
+      },
+      "mainPilotId": "1",
+      "aircraftId": "1",
+      "arrivalPlaceId": "1",
+      "arrivalDateTime": "2022-10-17T23:27:00.000Z",
+      "departurePlaceId": "2",
+      "departureDateTime": "2022-10-17T07:02:00.000Z"
+    },
+    {
+      "id": "3",
+      "awid": "4ef6a7b01b5942ecbfb925b249af987f",
+      "sys": {
+        "cts": "2022-10-22T14:09:21.637Z",
+        "mts": "2022-10-22T14:58:16.037Z",
+        "rev": 0
+      },
+      "mainPilotId": "1",
+      "aircraftId": "1",
+      "arrivalPlaceId": "3",
+      "arrivalDateTime": "2022-10-20T12:27:00.000Z",
+      "departurePlaceId": "1",
+      "departureDateTime": "2022-10-20T07:02:00.000Z"
+    },
+    {
+      "id": "4",
+      "awid": "4ef6a7b01b5942ecbfb925b249af987f",
+      "sys": {
+        "cts": "2022-10-22T14:09:21.637Z",
+        "mts": "2022-10-22T14:58:16.037Z",
+        "rev": 0
+      },
+      "mainPilotId": "1",
+      "aircraftId": "1",
+      "arrivalPlaceId": "1",
+      "arrivalDateTime": "2022-10-21T14:51:00.000Z",
+      "departurePlaceId": "3",
+      "departureDateTime": "2022-10-21T10:28:00.000Z"
+    }
+  ],
+  "pageInfo": {
+    "pageIndex": 0,
+    "pageSize": 100,
+    "total": 2
+  },
+  "uuAppErrorMap": {}
+}

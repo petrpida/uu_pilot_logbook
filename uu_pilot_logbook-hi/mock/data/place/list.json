@@ -1,0 +1,49 @@
+{
+  "itemList": [
+    {
+      "id": "1",
+      "awid": "4ef6a7b01b5942ecbfb925b249af987f",
+      "sys": {
+        "cts": "2022-10-21T14:09:21.637Z",
+        "mts": "2022-10-21T14:58:16.037Z",
+        "rev": 0
+      },
+      "name": "Prague",
+      "code": "PRG",
+      "gpsCoordinates": ["50.6795675N", "14.8752756E"],
+      "state": "active"
+    },
+    {
+      "id": "2",
+      "awid": "4ef6a7b01b5942ecbfb925b249af987f",
+      "sys": {
+        "cts": "2022-10-21T14:09:21.637Z",
+        "mts": "2022-10-21T14:58:16.037Z",
+        "rev": 0
+      },
+      "name": "Dubai",
+      "code": "DXB",
+      "gpsCoordinates": ["25.1595675N", "55.2152756E"],
+      "state": "active"
+    },
+    {
+      "id": "3",
+      "awid": "4ef6a7b01b5942ecbfb925b249af987f",
+      "sys": {
+        "cts": "2022-10-21T14:09:21.637Z",
+        "mts": "2022-10-21T14:58:16.037Z",
+        "rev": 0
+      },
+      "name": "Agadir",
+      "code": "AGA",
+      "gpsCoordinates": ["30.1995675N", "09.2152756W"],
+      "state": "active"
+    }
+  ],
+  "pageInfo": {
+    "pageIndex": 0,
+    "pageSize": 100,
+    "total": 2
+  },
+  "uuAppErrorMap": {}
+}

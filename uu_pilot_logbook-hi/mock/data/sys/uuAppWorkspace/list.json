@@ -1,0 +1,22 @@
+{
+  "data": {
+  "id": "01232515f1505f4",
+  "awid": "0121851515gf15",
+  "sys": {
+    "cts": "2022-10-21 14:09:21.637Z",
+    "mts": "2022-10-21 14:58:16.037Z",
+    "rev": 0
+  },
+  "mainPilotId": "10",
+  "aircraftId": "5",
+  "arrivalPlaceId": "10",
+  "arrivalDateTime": "2022-10-16T22:15:00.000Z",
+  "departurePlaceId": "15",
+  "departureDateTime": "2022-10-16T06:10:00.000Z"
+},
+  "sysData": {
+    "profileData": {
+      "uuIdentityProfileList": ["Authorities", "Executives", "Readers"]
+    }
+  }
+}
