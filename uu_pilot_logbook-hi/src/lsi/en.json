@@ -86,7 +86,9 @@
     "departure": "Departure: ",
     "arrival": "Arrival: ",
     "duration": "Duration: ",
-    "minutes": "minutes"
+    "minutes": "minutes",
+    "update": "Update",
+    "delete": "Delete"
   },
   "UuPilotLogbook.Core.LogbookEntry.DetailContent": {
     "pilot": "Pilot name: ",

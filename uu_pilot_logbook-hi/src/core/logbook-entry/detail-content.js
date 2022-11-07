@@ -11,7 +11,7 @@ import importLsi from "../../lsi/import-lsi";
 //@@viewOn:css
 const Css = {
   main: () => Config.Css.css({ display: "flex", flexDirection: "column", padding: "16px 0" }),
-  header: () => Config.Css.css({ padding: "16px"}),
+  header: () => Config.Css.css({ padding: "16px" }),
 };
 //@@viewOff:css
 
@@ -42,7 +42,6 @@ const DetailContent = createVisualComponent({
     const logbookEntryDataObject = props.logbookEntryDataObject
     const pilotDataObject = props.pilotDataObject.data
     const aircraft = props.aircraftDataObject.data
-    console.log(props)
 
     const flightFrom = props.placeDataList.data.filter((place) => place.data.id === logbookEntryDataObject.data.departurePlaceId)[0].data;
     const flightTo = props.placeDataList.data.filter((place) => place.data.id === logbookEntryDataObject.data.arrivalPlaceId)[0].data;
@@ -58,7 +57,7 @@ const DetailContent = createVisualComponent({
     return (
       <div {...attrs}>
         <Box className={Css.main()}>
-          <Text category="interface" segment="title" type="major" colorScheme="building" className={Css.header()}>
+          <Text category="interface" segment="title" type="major" colorScheme="highest" className={Css.header()}>
             {`${flightFrom.name} > ${flightTo.name}`}
           </Text>
 

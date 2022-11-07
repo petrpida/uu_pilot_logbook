@@ -35,12 +35,7 @@ const ListView = createVisualComponent({
   //@@viewOff:propTypes
 
   //@@viewOn:defaultProps
-  defaultProps: {
-    entryList: {},
-    pilotsDataList: {},
-    placeDataList: {},
-    aircraftDataList: {},
-  },
+  defaultProps: {},
   //@@viewOff:defaultProps
 
   render(props) {
@@ -133,18 +128,6 @@ const ListView = createVisualComponent({
       setUpdateData({ shown: false });
     };
 
-    const handleLoad = useCallback(
-      async (event) => {
-        try {
-          await props.entryList.handlerMap.load(event?.data);
-        } catch (error) {
-          showError(error);
-        }
-      },
-      [props.entryList, showError]
-    );
-
-
     const handleLoadNext = useCallback(
       async (pageInfo) => {
         try {
@@ -156,7 +139,6 @@ const ListView = createVisualComponent({
       [props.entryList, showError]
     );
 
-    //const profileList = systemData.profileData.uuIdentityProfileList;
     const isAuthority = true;
     const isExecutive = true;
 

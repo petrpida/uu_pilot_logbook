@@ -165,7 +165,7 @@ const Tile = createVisualComponent({
               icon="mdi-pencil"
               onClick={handleUpdate}
               significance="subdued"
-              tooltip="Update"
+              tooltip={lsi.update}
               disabled={isActionDisabled}
             />
             <Button
@@ -173,7 +173,7 @@ const Tile = createVisualComponent({
               colorScheme="red"
               onClick={handleDelete}
               significance="subdued"
-              tooltip="Delete"
+              tooltip={lsi.delete}
               disabled={isActionDisabled}
             />
           </div>

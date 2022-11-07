@@ -26,8 +26,8 @@ const EntryDetail = createVisualComponent({
     //@@viewOn:render
     return (
       <>
-          <RouteBar/>
-          <DetailNew entryId={route.params.id} />
+        <RouteBar/>
+        <DetailNew entryId={route.params.id}/>
       </>
     );
     //@@viewOff:render

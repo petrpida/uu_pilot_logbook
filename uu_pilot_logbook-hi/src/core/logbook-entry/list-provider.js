@@ -42,13 +42,11 @@ const ListProvider = createComponent({
 
     function handleCreate(values) {
       console.log(values)
-      //entryList.newData.push(values)
       //return Calls.logbookEntry.create(values);
     }
 
     async function handleUpdate(values) {
       console.log(values)
-      // const dtoIn = { id: entry.id };
       // return Calls.logbookEntry.update(dtoIn, props.baseUri);
     }
 

@@ -80,16 +80,18 @@
     "arrivalTime": "Čas příletu"
   },
   "UuPilotLogbook.Core.LogbookEntry.Tile": {
-    "name": "Jméno pilota: ",
-    "model": "Letadlo - model: ",
-    "registration": "Letadlo - registrace: ",
+    "name": "Pilot: ",
+    "model": "Letadlo: ",
+    "registration": "Registrace: ",
     "departure": "Odlet: ",
     "arrival": "Přílet: ",
     "duration": "Doba letu:",
-    "minutes": "minut"
+    "minutes": "minut",
+    "update": "Upravit",
+    "delete": "Smazat"
   },
   "UuPilotLogbook.Core.LogbookEntry.DetailContent": {
-    "pilot": "Jméno pilota: ",
+    "pilot": "Pilot: ",
     "model": "Letadlo: ",
     "registration": "Registrace: ",
     "departure": "Odlet: ",
