@@ -17,7 +17,7 @@ const ControlPanel = Utils.Component.lazy(() => import("../routes/control-panel.
 const ROUTE_MAP = {
   "": { redirect: "home" },
   home: (props) => <PilotLogbook {...props} />,
-  entry: (props) => <EntryDetail {...props}/>,
+  entryDetail: (props) => <EntryDetail {...props}/>,
   pilots: (props) => <Pilots {...props} />,
   about: (props) => <About {...props} />,
   "sys/uuAppWorkspace/initUve": (props) => <InitAppWorkspace {...props} />,

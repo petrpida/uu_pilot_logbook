@@ -42,9 +42,9 @@
   },
   "UuPilotLogbook.Core.LogbookEntry.ListView": {
     "header": "Pilot Logbook",
-    "createSuccessPrefix": "Well done, new entry (id: ",
-    "createSuccessSuffix": " ) has been created!",
-    "createEntry": "Create Entry"
+    "createSuccessPrefix": "Well done, new entry ",
+    "createSuccessSuffix": "has been created!",
+    "createEntry": "Create entry"
   },
   "UuPilotLogbook.Core.LogbookEntry.Content": {
     "totalHeader": "Total flight duration: ",
@@ -52,7 +52,8 @@
     "minutes": "{0} minutes"
   },
   "UuPilotLogbook.Core.LogbookEntry.DetailView": {
-    "info": "info"
+    "info": "info",
+    "header": "Flight Detail"
   },
   "UuPilotLogbook.Core.LogbookEntry.CreateModal": {
     "header": "Create flight entry",
@@ -65,5 +66,37 @@
     "aircraft": "Aircraft model",
     "departureTime": "Departure time",
     "arrivalTime": "Arrival time"
+  },
+  "UuPilotLogbook.Core.LogbookEntry.UpdateModal": {
+    "header": "Update flight entry",
+    "info": "info",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "pilot": "Pilot",
+    "departure": "From",
+    "arrival": "To",
+    "aircraft": "Aircraft model",
+    "departureTime": "Departure time",
+    "arrivalTime": "Arrival time"
+  },
+  "UuPilotLogbook.Core.LogbookEntry.Tile": {
+    "name": "Pilot name: ",
+    "model": "Aircraft model: ",
+    "registration": "Aircraft registration: ",
+    "departure": "Departure: ",
+    "arrival": "Arrival: ",
+    "duration": "Duration: ",
+    "minutes": "minutes"
+  },
+  "UuPilotLogbook.Core.LogbookEntry.DetailContent": {
+    "pilot": "Pilot name: ",
+    "model": "Aircraft model: ",
+    "registration": "Aircraft registration: ",
+    "departure": "Departure: ",
+    "departureTime": "Departure time: ",
+    "arrivalTime": "Arrival time: ",
+    "arrival": "Arrival: ",
+    "duration": "Duration: ",
+    "minutes": "minutes"
   }
 }

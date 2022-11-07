@@ -1,8 +1,8 @@
 //@@viewOn:imports
-import { createVisualComponent, PropTypes, Utils } from "uu5g05";
+import { createVisualComponent, PropTypes, Utils, useLsi } from "uu5g05";
 import { Box, Text, Button, DateTime } from "uu5g05-elements";
 import Config from "./config/config.js";
-import entryDetail from "../../routes/entry-detail";
+import importLsi from "../../lsi/import-lsi";
 //@@viewOff:imports
 
 //@@viewOn:css
@@ -13,7 +13,6 @@ const Css = {
       display: "flex",
       flexDirection: "column",
       height: "100%",
-      width: "500px"
     }),
 
   header: () =>
@@ -74,6 +73,7 @@ const Tile = createVisualComponent({
     aircraftDataList: PropTypes.object.isRequired,
     onUpdate: PropTypes.func,
     onDelete: PropTypes.func,
+    entryPermissions: PropTypes.object,
   },
   //@@viewOff:propTypes
 
@@ -91,6 +91,8 @@ const Tile = createVisualComponent({
   render(props) {
     //@@viewOn:private
     const { data: entryDataObject } = props
+    const isActionDisabled = entryDataObject.state === "pending";
+    const lsi = useLsi(importLsi, [Tile.uu5Tag]);
 
     function handleDelete(event) {
       event.stopPropagation();
@@ -106,6 +108,20 @@ const Tile = createVisualComponent({
       props.onDetail(entryDataObject.data);
     }
 
+    function getItemActions() {
+      const actionList = [];
+
+      if (props.entryPermissions.entry.canManage) {
+        actionList.push({
+          icon: "mdi-pencil",
+          onClick: handleUpdate,
+          disabled: isActionDisabled,
+        });
+      }
+
+      return actionList;
+    }
+
     const flightFrom = props.placeDataList.data.filter((place) => place.data.id === entryDataObject.data.departurePlaceId)[0].data;
     const flightTo = props.placeDataList.data.filter((place) => place.data.id === entryDataObject.data.arrivalPlaceId)[0].data;
     const flightDuration = (Date.parse(entryDataObject.data.arrivalDateTime) - Date.parse(entryDataObject.data.departureDateTime))/60000;
@@ -115,33 +131,32 @@ const Tile = createVisualComponent({
 
     //@@viewOn:render
     const [elementProps] = Utils.VisualComponent.splitProps(props, Css.main());
-    const isActionDisabled = entryDataObject.state === "pending";
 
     return (
-      <Box {...elementProps} onClick={handleDetail}>
+      <Box {...elementProps} onClick={handleDetail} actionList={getItemActions()}>
         <Text category="interface" segment="title" type="minor" colorScheme="building" className={Css.header()}>
           {`${flightFrom.name} > ${flightTo.name}`}
         </Text>
 
         <InfoLine>
-          <Text>{`Pilot name: ${props.pilotsDataList.data[0].data.name}`}</Text>
+          <Text>{`${lsi.name} ${props.pilotsDataList.data[0].data.name}`}</Text>
         </InfoLine>
         <InfoLine>
-          <Text>{`Aircraft model: ${props.aircraftDataList.data[0].data.model}`}</Text>
+          <Text>{`${lsi.model} ${props.aircraftDataList.data[0].data.model}`}</Text>
         </InfoLine>
         <InfoLine>
-          <Text>{`Aircraft registration: ${props.aircraftDataList.data[0].data.registration}`}</Text>
+          <Text>{`${lsi.registration} ${props.aircraftDataList.data[0].data.registration}`}</Text>
         </InfoLine>
         <InfoLine>
-          <Text>Departure: </Text>
+          <Text>{lsi.departure}</Text>
           <DateTime value={entryDataObject.data.departureDateTime} dateFormat="short" />
         </InfoLine>
         <InfoLine>
-          <Text>Arrival: </Text>
+          <Text>{lsi.arrival}</Text>
           <DateTime value={entryDataObject.data.arrivalDateTime} dateFormat="short" />
         </InfoLine>
         <InfoLine>
-          <Text>{`Duration: ${flightDuration} minutes`}</Text>
+          <Text>{`${lsi.duration} ${flightDuration} ${lsi.minutes}`}</Text>
         </InfoLine>
 
         <Box significance="distinct" className={Css.footer()}>
@@ -155,6 +170,7 @@ const Tile = createVisualComponent({
             />
             <Button
               icon="mdi-delete"
+              colorScheme="red"
               onClick={handleDelete}
               significance="subdued"
               tooltip="Delete"

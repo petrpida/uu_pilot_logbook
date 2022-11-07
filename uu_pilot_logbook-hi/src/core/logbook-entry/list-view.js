@@ -7,6 +7,7 @@ import Config from "./config/config.js";
 import DataListStateResolver from "../data-list-state-resolver";
 import Content from "./list-content";
 import CreateModal from "./create-modal";
+import UpdateModal from "./update-modal";
 import DeleteModal from "./delete-modal";
 import importLsi from "../../lsi/import-lsi";
 import { useSystemData } from "uu_plus4u5g02";
@@ -92,7 +93,7 @@ const ListView = createVisualComponent({
       const message = (
         <>
           <Lsi import={importLsi} path={[ListView.uu5Tag, "createSuccessPrefix"]} />
-          {`${entry.id}`}
+          {/*{`${entry.id}`}*/}
           <Lsi import={importLsi} path={[ListView.uu5Tag, "createSuccessSuffix"]} />
         </>
       );
@@ -117,14 +118,20 @@ const ListView = createVisualComponent({
     const handleDeleteCancel = () => setDeleteData({ shown: false });
 
 
-    async function handleUpdate(entryObject) {
-      try {
-        await entryObject.handlerMap.update();
-      } catch (error) {
-        ListView.logger.error("Error updating joke", error);
-        showError(error, "Joke update failed!");
-      }
-    }
+    const handleUpdate = useCallback(
+      (entryDataObject) => {
+        setUpdateData({ shown: true, id: entryDataObject.data.id });
+      },
+      [setUpdateData]
+    );
+
+    const handleUpdateDone = () => {
+      setUpdateData({ shown: false });
+    };
+
+    const handleUpdateCancel = () => {
+      setUpdateData({ shown: false });
+    };
 
     const handleLoad = useCallback(
       async (event) => {
@@ -178,6 +185,17 @@ const ListView = createVisualComponent({
             onCancel={handleCreateCancel}
           />
         )}
+        {updateData.shown && activeDataObject && (
+          <UpdateModal
+            entryDataObject={activeDataObject}
+            pilotsDataList={props.pilotsDataList}
+            placeDataList={props.placeDataList}
+            aircraftDataList={props.aircraftDataList}
+            onSaveDone={handleUpdateDone}
+            onCancel={handleUpdateCancel}
+            shown
+          />
+        )}
         {deleteData.shown && activeDataObject && (
           <DeleteModal
             entryDataObject={activeDataObject}
@@ -209,6 +227,8 @@ const ListView = createVisualComponent({
                       onLoadNext={handleLoadNext}
                       onDelete={handleDelete}
                       onDetail={handleDetail}
+                      onUpdate={handleUpdate}
+                      entryPermissions={entryPermissions}
                     />
                   </DataListStateResolver>
                 </DataListStateResolver>

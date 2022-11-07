@@ -30,6 +30,11 @@ const Calls = {
       const commandUri = Calls.getCommandUri("logbookEntry/get");
       return Calls.call("get", commandUri, dtoIn);
     },
+
+    update(dtoIn) {
+      const commandUri = Calls.getCommandUri("logbookEntry/update");
+      return Calls.call("post", commandUri, dtoIn);
+    },
   },
 
   Pilot: {

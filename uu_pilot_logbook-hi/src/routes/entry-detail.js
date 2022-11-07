@@ -1,10 +1,8 @@
 //@@viewOn:imports
 import { createVisualComponent, useRoute } from "uu5g05";
-import { RouteController } from "uu_plus4u5g02-app";
-import RouteContainer from "../core/route-container";
-import Detail from "../core/logbook-entry/detail";
 import Config from "./config/config";
 import RouteBar from "../core/route-bar";
+import DetailNew from "../core/logbook-entry/detail-new";
 //@@viewOff:imports
 
 const EntryDetail = createVisualComponent({
@@ -27,12 +25,10 @@ const EntryDetail = createVisualComponent({
 
     //@@viewOn:render
     return (
-      <RouteController>
-        <RouteContainer>
+      <>
           <RouteBar/>
-          <Detail entryId={route.params.id} />
-        </RouteContainer>
-      </RouteController>
+          <DetailNew entryId={route.params.id} />
+      </>
     );
     //@@viewOff:render
   },

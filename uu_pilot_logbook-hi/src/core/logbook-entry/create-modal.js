@@ -1,5 +1,5 @@
 //@@viewOn:imports
-import { createVisualComponent, PropTypes, Lsi, useLsi, Utils } from "uu5g05";
+import { createVisualComponent, PropTypes, useLsi, Utils } from "uu5g05";
 import { Modal } from "uu5g05-elements";
 import { Form, FormSelect, FormDateTime, SubmitButton, CancelButton } from "uu5g05-forms";
 import Config from "./config/config";

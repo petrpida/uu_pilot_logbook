@@ -33,7 +33,8 @@ export const Content = createVisualComponent({
     placeDataList: PropTypes.object.isRequired,
     aircraftDataList: PropTypes.object.isRequired,
     onDetail: PropTypes.func,
-
+    entryPermissions: PropTypes.object,
+    onUpdate: PropTypes.func,
   },
   //@@viewOff:propTypes
 
@@ -70,6 +71,7 @@ export const Content = createVisualComponent({
           <Text className={Css.spaceLeft()}>{Utils.String.format(lsi["minutes"], mins.toString())}</Text>
         </Box>
         <Grid
+          data={props.entryList.data}
           onLoad={handleLoadNext}
           tileMinWidth={270}
           tileMaxWidth={600}
@@ -81,7 +83,9 @@ export const Content = createVisualComponent({
           <Tile
             {...tileProps}
             onDetail={props.onDetail}
-            onDelete={props.onDelete}/>
+            onDelete={props.onDelete}
+            onUpdate={props.onUpdate}
+            entryPermissions={props.entryPermissions}/>
         </Grid>
         <FilterManagerModal/>
         <SorterManagerModal/>

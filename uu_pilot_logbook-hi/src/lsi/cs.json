@@ -42,8 +42,8 @@
   },
   "UuPilotLogbook.Core.LogbookEntry.ListView": {
     "header": "Pilotní deník",
-    "createSuccessPrefix": "Skvěle, nový záznam (id: ",
-    "createSuccessSuffix": " ) byl vytvořen!",
+    "createSuccessPrefix": "Skvěle, nový záznam ",
+    "createSuccessSuffix": " byl vytvořen!",
     "createEntry": "Vytvořit záznam"
   },
   "UuPilotLogbook.Core.LogbookEntry.Content": {
@@ -52,7 +52,8 @@
     "minutes": "{0} minut"
   },
   "UuPilotLogbook.Core.LogbookEntry.DetailView": {
-    "info": "info"
+    "info": "info",
+    "header": "Detail letu"
   },
   "UuPilotLogbook.Core.LogbookEntry.CreateModal": {
     "header": "Vytvořit nový záznam",
@@ -65,5 +66,37 @@
     "aircraft": "Letadlo",
     "departureTime": "Čas odletu",
     "arrivalTime": "Čas příletu"
+  },
+  "UuPilotLogbook.Core.LogbookEntry.UpdateModal": {
+    "header": "Upravit záznam",
+    "info": "info",
+    "cancel": "Zrušit",
+    "submit": "Upravit",
+    "pilot": "Pilot",
+    "departure": "Z",
+    "arrival": "Do",
+    "aircraft": "Letadlo",
+    "departureTime": "Čas odletu",
+    "arrivalTime": "Čas příletu"
+  },
+  "UuPilotLogbook.Core.LogbookEntry.Tile": {
+    "name": "Jméno pilota: ",
+    "model": "Letadlo - model: ",
+    "registration": "Letadlo - registrace: ",
+    "departure": "Odlet: ",
+    "arrival": "Přílet: ",
+    "duration": "Doba letu:",
+    "minutes": "minut"
+  },
+  "UuPilotLogbook.Core.LogbookEntry.DetailContent": {
+    "pilot": "Jméno pilota: ",
+    "model": "Letadlo: ",
+    "registration": "Registrace: ",
+    "departure": "Odlet: ",
+    "departureTime": "Čas odletu: ",
+    "arrivalTime": "Čas příletu: ",
+    "arrival": "Přílet: ",
+    "duration": "Doba letu: ",
+    "minutes": "minut"
   }
 }

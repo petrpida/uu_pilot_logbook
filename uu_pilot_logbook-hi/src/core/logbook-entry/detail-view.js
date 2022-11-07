@@ -8,6 +8,12 @@ import Config from "./config/config";
 import importLsi from "../../lsi/import-lsi";
 //@@viewOff:imports
 
+//@@viewOn:css
+const Css = {
+  main: () => Config.Css.css({ margin: "16px"}),
+};
+//@@viewOff:css
+
 const STATICS = {
   //@@viewOn:statics
   uu5Tag: Config.TAG + "DetailView",
@@ -37,18 +43,18 @@ const DetailView = createVisualComponent({
     //@@viewOn:render
     const attrs = Utils.VisualComponent.getAttrs(props);
     return (
-      <>
+      <div className={Css.main()}>
         <Uu5Elements.Block
           {...attrs}
           info={<Lsi import={importLsi} path={[DetailView.uu5Tag, "info"]}/>}
-          header={`${props.logbookEntryDataObject?.data?.departurePlaceId} > ${props.logbookEntryDataObject?.data?.arrivalPlaceId}`}
+          header={<Lsi import={importLsi} path={[DetailView.uu5Tag, "header"]}/>}
           headerType="heading"
           card="none"
         >
           <DataObjectStateResolver dataObject={props.logbookEntryDataObject}>
-            <DataObjectStateResolver dataList={props.pilotDataObject}>
+            <DataObjectStateResolver dataObject={props.pilotDataObject}>
               <DataListStateResolver dataList={props.placeDataList}>
-                <DataObjectStateResolver dataList={props.aircraftDataObject}>
+                <DataObjectStateResolver dataObject={props.aircraftDataObject}>
                   <DetailContent
                     logbookEntryDataObject={props.logbookEntryDataObject}
                     pilotDataObject={props.pilotDataObject}
@@ -60,7 +66,7 @@ const DetailView = createVisualComponent({
             </DataObjectStateResolver>
           </DataObjectStateResolver>
         </Uu5Elements.Block>
-      </>
+      </div>
     );
     //@@viewOff:render
   },
